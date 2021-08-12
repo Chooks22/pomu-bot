@@ -1,0 +1,9 @@
+---
+env:
+  node: true
+extends:
+  - "@chookslint/typescript"
+parserOptions:
+  project: ./tsconfig.json
+rules:
+  sort-imports: "off"
