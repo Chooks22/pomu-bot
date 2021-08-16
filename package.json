@@ -6,10 +6,12 @@
     "start": "chooks"
   },
   "dependencies": {
-    "chookscord": "^0.2.1"
+    "chookscord": "^0.5.1",
+    "node-fetch": "^2.6.1"
   },
   "devDependencies": {
     "@chookslint/eslint-config-typescript": "^1.0.2",
+    "@types/node-fetch": "^2.5.12",
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
     "eslint": "^7.32.0",
