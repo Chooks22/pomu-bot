@@ -1,6 +1,6 @@
 {
   "name": "pomu-bot",
-  "version": "1.0.0.",
+  "version": "1.1.0.",
   "description": "I'm Pomu!",
   "scripts": {
     "dev": "chooks",
