@@ -3,11 +3,13 @@
   "version": "1.0.0.",
   "description": "I'm Pomu!",
   "scripts": {
-    "start": "chooks"
+    "dev": "chooks",
+    "build": "chooks build",
+    "start": "chooks start",
+    "register": "chooks register"
   },
   "dependencies": {
-    "chookscord": "^0.5.1",
-    "node-fetch": "^2.6.1"
+    "chookscord": "^0.10.0"
   },
   "devDependencies": {
     "@chookslint/eslint-config-typescript": "^1.0.2",
