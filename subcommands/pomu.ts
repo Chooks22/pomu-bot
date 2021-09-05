@@ -1,4 +1,4 @@
-import { defineSubCommand } from 'chookscord';
+import { CommandInteraction, defineSubCommand } from 'chookscord';
 
 interface PomuCount {
   success: boolean;
@@ -6,7 +6,19 @@ interface PomuCount {
 }
 
 function parsePomu(data: PomuCount): string {
-  return Number(data.count).toLocaleString('en-GB');
+  return Number(data.count)
+    .toLocaleString('en-GB');
+}
+
+async function reply(
+  interaction: CommandInteraction,
+  content: string,
+  ephemeral = false,
+): Promise<void> {
+  await interaction.reply({
+    content,
+    ephemeral,
+  });
 }
 
 export default defineSubCommand({
@@ -19,14 +31,13 @@ export default defineSubCommand({
       type: 'SUB_COMMAND',
       async execute({ fetch, interaction }) {
         const response = await fetch.post<PomuCount>('https://impomu.com/get');
-
-        if (!response.ok) {
-          interaction.reply('Failed to get Pomu count!');
-          return;
-        }
-
-        const pomus = parsePomu(response.data);
-        interaction.reply(`Total Pomus: ${pomus}`);
+        await reply(
+          interaction,
+          response.ok
+            ? `Total Pomudachis: ${parsePomu(response.data)}`
+            : 'Failed to count Pomudachis!',
+          !response.ok,
+        );
       },
     },
     {
@@ -35,11 +46,13 @@ export default defineSubCommand({
       type: 'SUB_COMMAND',
       async execute({ fetch, interaction }) {
         const response = await fetch('https://impomu.com/add');
-        if (response.ok) {
-          interaction.reply('I\'m Pomu!');
-        } else {
-          interaction.reply('Pomu\'s not here right now');
-        }
+        await reply(
+          interaction,
+          response.ok
+            ? 'I\'m Pomu!'
+            : 'Pomu\'s not here right now.',
+          !response.ok,
+        );
       },
     },
   ],
