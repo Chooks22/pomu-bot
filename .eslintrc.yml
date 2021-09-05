@@ -6,4 +6,5 @@ extends:
 parserOptions:
   project: ./tsconfig.json
 rules:
+  func-style: "off"
   sort-imports: "off"
