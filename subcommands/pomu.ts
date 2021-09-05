@@ -23,11 +23,11 @@ async function reply(
 
 export default defineSubCommand({
   name: 'pomu',
-  description: 'Im Pomu',
+  description: 'I\'m Pomu!',
   options: [
     {
       name: 'get',
-      description: 'Get total Pomus',
+      description: 'Get total Pomudachis.',
       type: 'SUB_COMMAND',
       async execute({ fetch, interaction }) {
         const response = await fetch.post<PomuCount>('https://impomu.com/get');
@@ -42,7 +42,7 @@ export default defineSubCommand({
     },
     {
       name: 'add',
-      description: 'Add a Pomu',
+      description: 'Add a Pomudachi.',
       type: 'SUB_COMMAND',
       async execute({ fetch, interaction }) {
         const response = await fetch('https://impomu.com/add');
