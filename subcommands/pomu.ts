@@ -1,4 +1,5 @@
-import { CommandInteraction, defineSubCommand } from 'chookscord';
+import type { CommandInteraction } from 'chookscord/discordjs';
+import { defineSubCommand } from 'chookscord';
 
 interface PomuCount {
   success: boolean;

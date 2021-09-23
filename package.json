@@ -1,6 +1,6 @@
 {
   "name": "pomu-bot",
-  "version": "1.1.0.",
+  "version": "1.1.1",
   "description": "I'm Pomu!",
   "scripts": {
     "dev": "chooks",
@@ -9,7 +9,7 @@
     "register": "chooks register"
   },
   "dependencies": {
-    "chookscord": "^0.10.0"
+    "chookscord": "^0.11.0"
   },
   "devDependencies": {
     "@chookslint/eslint-config-typescript": "^1.0.2",
