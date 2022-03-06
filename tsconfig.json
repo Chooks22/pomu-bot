@@ -1,9 +1,15 @@
 {
   "compilerOptions": {
-    "target": "ES2021",
+    "target": "ES2022",
     "module": "CommonJS",
+    "noEmit": true,
+    "strict": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "outDir": "dist"
-  }
+    "esModuleInterop": true
+  },
+  "exclude": [
+    "dist",
+    "node_modules",
+    ".chooks"
+  ]
 }

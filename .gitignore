@@ -1,3 +1,5 @@
 .env
 .chooks
+
+dist
 node_modules

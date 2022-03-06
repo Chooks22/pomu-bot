@@ -1,10 +1,7 @@
-import { defineConfig } from 'chookscord';
+import { defineConfig } from 'chooksie'
 
 export default defineConfig({
-  credentials: {
-    token: process.env.DISCORD_BOT_TOKEN,
-    applicationId: process.env.DISCORD_APPLICATION_ID,
-  },
+  token: process.env.DISCORD_BOT_TOKEN,
   devServer: process.env.DISCORD_DEV_SERVER,
   intents: [],
-});
+})
